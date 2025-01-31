@@ -22,5 +22,5 @@ This project is a simple Volunteer Registration System built with Node.js, Expre
 
 1. **Clone the repository:**
    ```bash
-   [git clone https://github.com/Janvi023kakadiya/To-Do-List.git
+   git clone https://github.com/Janvi023kakadiya/To-Do-List.git
    cd To-Do-List
