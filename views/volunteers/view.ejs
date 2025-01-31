@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Volunteer Details</title>
+    <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Volunteer Details</h1>
+    <% if (volunteer) { %>
+        <p><strong>Name:</strong> <%= volunteer.name %></p>
+        <p><strong>Email:</strong> <%= volunteer.email %></p>
+        <p><strong>Phone:</strong> <%= volunteer.phone %></p>
+        <p><strong>Skills:</strong> <%= volunteer.skills %></p>
+    <% } else { %>
+        <p>Volunteer not found.</p>
+    <% } %>
+    <a href="/" class="btn back-btn">Back to Home Page</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Volunteer</title>
+  <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+  <div class="container"> 
+    <h1>Edit Volunteer</h1>
+
+    <% if (volunteer) { %> 
+    <form action="/volunteers/edit/<%= volunteer.id %>" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="<%= volunteer.name %>" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" value="<%= volunteer.email %>" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" value="<%= volunteer.phone %>">
+        </div>
+        <div class="form-group">
+          <label for="skills">Skills:</label>
+          <textarea id="skills" name="skills"><%= volunteer.skills %></textarea>
+        </div>
+        <button type="submit" class="btn save-btn">Save Changes</button>
+      </form>
+    <% } else { %>
+        <p>Volunteer not found.</p>
+    <% } %>
+
+    <a href="/" class="btn back-btn">Back to Home Page</a>
+  </div>
+</body>
+</html>

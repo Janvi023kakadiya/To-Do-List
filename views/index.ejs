@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Volunteer Registration</title>
+  <link rel="stylesheet" href="/css/style.css"> 
+</head>
+<body>
+  <div class="container">
+    <h1>Volunteer Registration System</h1>
+
+    <h2>Add New Volunteer</h2>
+    <form action="/addVolunteer" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="skills">Skills:</label>
+        <textarea id="skills" name="skills"></textarea>
+      </div>
+      <button type="submit">Add Volunteer</button>
+    </form>
+
+    <h2>Registered Volunteers</h2>
+    <ul>
+      <% volunteers.forEach(volunteer => { %>
+        <li class="volunteer-item">
+          <div>
+            <h3><%= volunteer.name %></h3>
+            <p><strong>Email:</strong> <%= volunteer.email %></p>
+            <p><strong>Phone:</strong> <%= volunteer.phone %></p>
+            <p><strong>Skills:</strong> <%= volunteer.skills %></p>
+          </div>
+          <div class="actions">
+            <a href="/volunteers/<%= volunteer.id %>" class="btn view-btn">View</a>
+            <a href="/volunteers/edit/<%= volunteer.id %>" class="btn edit-btn">Edit</a>
+            <a href="/volunteers/delete/<%= volunteer.id %>" class="btn delete-btn">Delete</a>
+          </div>
+        </li>
+      <% }); %>
+    </ul>
+  </div> 
+</body>
+</html>
